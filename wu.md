@@ -16,7 +16,9 @@ karena vulnnya berada di endpoint upload, saya grep "upload" ke file access log,
 
 dari output ini, langsung keliatan jelas ip nya adalah `45.148.10.73`
 
-**Answer:** ```45.148.10.73```
+**Answer:** `
+45.148.10.73
+`
 
 `Question 2/30:
 What was the first timestamp when that IP accessed the vulnerable upload endpoint?`
