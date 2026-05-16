@@ -11,7 +11,7 @@ okeh, langsung aja jawab pertanyaan-pertanyaannya, ada 30 soal anjay
 `Question 1/30:
 What external IP address first accessed the vulnerable upload endpoint?`
 
-karena vulnnya beraoa di endpoint upload, saya grep "upload" ke file access log, dan ini outputnya
+karena vulnnya berada di endpoint upload, saya grep "upload" ke file access log, dan ini outputnya
 <img width="1920" height="1128" alt="image" src="https://github.com/user-attachments/assets/946b8490-a45c-498b-aab9-bac59cee012a" />
 
 dari output ini, langsung keliatan jelas ip nya adalah `45.148.10.73`
