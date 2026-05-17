@@ -85,3 +85,22 @@ What application configuration file was read by the attacker?`
 dari output command diatas, path file configuration adalah /srv/sagaramart/current/.env.production
 
 **Answer:** `/srv/sagaramart/current/.env.production`
+
+`Question 11/30:
+What database username did the attacker use?`
+
+Dari struktur direktori evidence, keliatan folder database/db-main-01/ isinya file-file seperti mysql_audit.log, mysql_general.log, dan mysql_error.log, yang menunjukkan database yang digunakan adalah MySQL. Maka saya mencari jejak aktivitas MySQL dengan grep "mysql" di process_creation.jsonl, saya juga menggunakan argumen grep -v noise_blob agar tidak ada noise
+
+<img width="1920" height="1128" alt="image" src="https://github.com/user-attachments/assets/82c84024-7a83-46a7-8e9d-1ac0c0077c08" />
+
+terlihat www-data via php-fpm8.1 dump user database svc_partner_report
+
+**Answer:** `svc_partner_report`
+
+`Question 12/30:
+What was the internal IP address of the database server?`
+
+jawabannya ada di cmdline output diatas, yaitu, 
+```
+mysqldump -h 172.16.30.22 -u svc_partner_report partner_portal partner_users > /dev/shm/.cache/.p_users.sql
+```
